@@ -1,0 +1,24 @@
+.cross {
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: 1.3rem;
+}
+
+.d-flex > div {
+  width: 55%;
+}
+
+img {
+  width: 44%;
+  height: auto;
+}
+
+.victory {
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 4px;
+  border-radius: 4px;
+  padding: 0.2rem 0.3rem;
+  color: white;
+}

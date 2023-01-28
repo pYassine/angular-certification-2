@@ -1,0 +1,46 @@
+<section *ngIf="team" class="">
+  <h2>{{ team.full_name }} [{{ team.abbreviation }}]</h2>
+  <span>{{ team.division }}</span>
+  <hr />
+  <div class="d-flex">
+    <div>
+      <div>
+        <span>Results of past 12 days</span>
+        <div>
+          <span
+            class="victory"
+            *ngFor="let result of results"
+            [ngStyle]="{ 'background-color': result ? 'green' : 'red' }"
+          >
+            {{ result ? "W" : "L" }}
+          </span>
+        </div>
+      </div>
+      <p>
+        Average pts scored: <strong>{{ avgOpponent }}</strong>
+      </p>
+      <p>
+        Average pts concedded: <strong>{{ avgTeam }}</strong>
+      </p>
+    </div>
+    <img
+      src="https://interstate21.com/nba-logos/{{ team.abbreviation }}.png"
+      alt="{{ team.full_name }} LOGO"
+    />
+  </div>
+
+  <button
+    class="cross"
+    (click)="removeItem()"
+    [id]="'remove' + team.abbreviation"
+  >
+    x
+  </button>
+  <a
+    [routerLink]="['results', team.id]"
+    class="btn btn-green"
+    [id]="'results' + team.abbreviation"
+  >
+    See game results >>
+  </a>
+</section>

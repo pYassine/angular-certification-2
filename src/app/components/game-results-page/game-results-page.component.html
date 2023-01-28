@@ -1,0 +1,24 @@
+<div *ngIf="team">
+  <section *ngIf="team" class="">
+    <h2>{{ team.full_name }} [{{ team.abbreviation }}]</h2>
+    <span>{{ team.division }}</span>
+    <hr />
+
+    <p>Score of past 12 days</p>
+
+    <div class="score" *ngFor="let game of games">
+      <b>{{ game.home_team.abbreviation }}</b> {{ game.home_team_score }} -
+      {{ game.visitor_team_score }}
+      <b>{{ game.visitor_team.abbreviation }}</b>
+    </div>
+
+    <div>
+      <a routerLink="/" class="btn btn-green" id="backBtn"
+        ><< Back to all team stats</a
+      >
+    </div>
+    <br />
+  </section>
+</div>
+
+<div *ngIf="!team">Loading ...</div>

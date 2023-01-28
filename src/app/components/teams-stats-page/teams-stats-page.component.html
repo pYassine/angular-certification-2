@@ -1,0 +1,26 @@
+<label for="select-team">Select team</label>
+<select id="teamInput" [(ngModel)]="selectedTeam" *ngIf="teams">
+  <option></option>
+  <option *ngFor="let team of teams" [value]="team.id">
+    {{ team.full_name }}
+  </option>
+</select>
+<button
+  id="trackBtn"
+  [disabled]="!selectedTeam"
+  (click)="addTeam(selectedTeam)"
+  class="btn btn-blue"
+>
+  Track team
+</button>
+
+<div class="container">
+  <div class="d-flex">
+    <app-display-team
+      *ngFor="let team of selectedTeamsIds"
+      [teamId]="team"
+      (remove)="removeTeam($event)"
+    >
+    </app-display-team>
+  </div>
+</div>
