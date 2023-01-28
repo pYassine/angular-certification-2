@@ -10,7 +10,7 @@ import { DisplayTeamComponent } from "./components/display-team/display-team.com
 import { GameResultsPageComponent } from "./components/game-results-page/game-results-page.component";
 import { TeamsStatsPageComponent } from "./components/teams-stats-page/teams-stats-page.component";
 import { FormsModule } from "@angular/forms";
-import { NotFoundComponent } from './components/not-found/not-found.component';
+import { NotFoundComponent } from "./components/not-found/not-found.component";
 
 @NgModule({
   declarations: [

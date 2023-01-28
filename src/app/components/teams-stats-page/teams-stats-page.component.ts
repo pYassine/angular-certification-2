@@ -17,7 +17,7 @@ export class TeamsStatsPageComponent implements OnInit, OnDestroy {
 
   constructor(private readonly nbaApiService: NbaApiService) {
     const savedTeams = localStorage.getItem("teams");
-    this.selectedTeamsIds = savedTeams ? JSON.parse(savedTeams) : ["1"];
+    this.selectedTeamsIds = savedTeams ? JSON.parse(savedTeams) : [];
     this.teams = [];
   }
 

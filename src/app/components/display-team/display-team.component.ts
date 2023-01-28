@@ -51,7 +51,7 @@ export class DisplayTeamComponent implements OnInit, OnDestroy {
     );
   }
 
-  private countResults(games: NbaGamesResults): void {
+  public countResults(games: NbaGamesResults): void {
     let totalScore = 0;
     let totalOpponentScore = 0;
 
@@ -67,14 +67,14 @@ export class DisplayTeamComponent implements OnInit, OnDestroy {
         opponentScore = game.home_team_score;
       }
 
-      totalScore += teamScore;
-      totalOpponentScore += opponentScore;
+      totalScore = totalScore + teamScore;
+      totalOpponentScore = totalOpponentScore + opponentScore;
       const victory = teamScore > opponentScore;
       this.results.push(victory);
     });
 
-    this.avgOpponent = Math.round(totalOpponentScore / this.results.length);
-    this.avgTeam = Math.round(totalScore / this.results.length);
+    this.avgOpponent = Math.round(totalOpponentScore / games.data.length);
+    this.avgTeam = Math.round(totalScore / games.data.length);
   }
 
   ngOnDestroy(): void {

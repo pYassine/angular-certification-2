@@ -1,6 +1,6 @@
 <section *ngIf="team" class="">
   <h2>{{ team.full_name }} [{{ team.abbreviation }}]</h2>
-  <span>{{ team.division }}</span>
+  <span>{{ team.conference }}ern conference</span>
   <hr />
   <div class="d-flex">
     <div>
@@ -17,10 +17,10 @@
         </div>
       </div>
       <p>
-        Average pts scored: <strong>{{ avgOpponent }}</strong>
+        Average pts scored: <strong>{{ avgTeam }}</strong>
       </p>
       <p>
-        Average pts concedded: <strong>{{ avgTeam }}</strong>
+        Average pts concedded: <strong>{{ avgOpponent }}</strong>
       </p>
     </div>
     <img
@@ -28,7 +28,6 @@
       alt="{{ team.full_name }} LOGO"
     />
   </div>
-
   <button
     class="cross"
     (click)="removeItem()"
